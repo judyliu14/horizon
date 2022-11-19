@@ -1,0 +1,174 @@
+/* ********************************* RESET ********************************* */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ********************************* VARIABLES ********************************* */
+
+:root {
+  --eclipse-black: #000000;
+  --ultraviolet: #D020E4;
+  --radioactive-orange: #FF6700;
+  --pluto-white: #FFFFFF;
+  --cosmic-purple: #4F0D72;
+  --horizon-gradient: linear-gradient(90deg, #FF6700 0%, #DC23A8 37%, #DC23A8 69%, #4F0D72 100%);
+  --desktop-padding: 40px;
+  --desktop-icon-size: 30px;
+  --mobile-padding: 30px;
+  --mobile-icon-size: 24px;
+}
+
+@font-face {
+  font-family: 'HK Grotesk Wide';
+  src: url("./fonts/HKGroteskWide/OTF/HKGroteskWide-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Gobold High Bold';
+  src: url("./fonts/gobold/Gobold\ High\ Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Gobold High Normal';
+  src: url("./fonts/gobold/Gobold\ Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url("./fonts/Space_Mono/SpaceMono-Regular.ttf");
+}
+
+/* ********************************* LANDING ********************************* */
+
+body {
+  position: relative;
+  background-image: url("./images/bg-stars.jpg"), 
+                    url("./images/bg-grid.png");
+  background-repeat: repeat, no-repeat;
+  background-position: bottom center, 
+                       top -35% center;
+  background-attachment: fixed;
+  background-size: auto 100vh, 
+                   100vw 60vh;
+}
+
+body #grid {
+  position: absolute;
+  width: 100vw;
+  z-index: 0;
+}
+
+body #orange {
+  background-color: none;
+  background-position: top 20% left 30%;
+  background-size: 840px auto;                   
+  background-repeat: no-repeat;
+  background-blend-mode: color-dodge;
+  z-index: 0;
+}
+
+/******************************** HEADER *************************************/
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header li {
+  display: inline-block;
+}
+
+.header .horizon {
+  float: left;
+  padding-top: var(--desktop-padding);
+  padding-left: var(--desktop-padding);
+}
+
+.header .horizon img {
+  height: 56px;
+}
+
+/******************************** MAIN *************************************/
+
+/* countdown timer */
+.countdown {
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.countdown .countdown__title {
+  text-transform: uppercase;
+  font-family: 'HK Grotesk Wide';
+  font-size: 3.5rem;
+  height: 86.4px;
+  font-kerning: 100%; /* fix kerning */
+  background: var(--horizon-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.countdown .countdown__timer .countdown__timer__other,
+.countdown .countdown__timer .countdown__timer__days,
+.countdown .countdown__timer .countdown__timer__hours,
+.countdown .countdown__timer .countdown__timer__minutes,
+.countdown .countdown__timer .countdown__timer__seconds {
+  vertical-align: top;
+  margin: 23px 10px 0 10px;
+  color: var(--pluto-white);
+  display: inline-block;
+}
+
+.countdown .countdown__timer p {
+  font-family: 'Gobold High Bold';
+  font-size: 3rem;
+  font-kerning: 3%;
+}
+
+.countdown .countdown__timer h3{
+  font-family: 'Space Mono';
+  font-size: 14px;
+  line-height: 150%;
+  font-kerning: 0%;
+}
+
+/******************************** FOOTER *************************************/
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+footer li {
+  display: inline-block;
+}
+
+footer .social-icons {
+  float: left;
+  padding-left: var(--desktop-padding);
+  padding-bottom: var(--desktop-padding);
+}
+
+footer .social-icons img {
+  margin-right: var(--desktop-icon-size);
+  height: var(--desktop-icon-size);
+}
+
+footer .asce-icons {
+  float: right;
+  padding-right: var(--desktop-padding);
+}
+
+footer .asce-icons img {
+  height: var(--desktop-icon-size);
+  padding-bottom: var(--desktop-padding);
+}
