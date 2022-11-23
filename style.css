@@ -42,28 +42,66 @@
 
 /* ********************************* LANDING ********************************* */
 
-body {
+/* body {
   position: relative;
-  background-image: url("./images/bg-stars.jpg"), 
-                    url("./images/bg-grid.png");
-  background-repeat: repeat, no-repeat;
-  background-position: bottom center, 
-                       top -35% center;
+  background-image:
+    url("./images/bg-stars.jpg"),
+    url("./images/bg-grid.png");
+  background-repeat:
+    repeat,
+    no-repeat;
+  background-position:
+    bottom center,
+    top -35% center;
   background-attachment: fixed;
-  background-size: auto 100vh, 
-                   100vw 60vh;
+  background-size:
+    auto 100vh,
+    100vw 60vh;
+} */
+
+body {
+  background-color: var(--eclipse-black);
 }
 
-body #grid {
+.stars {
   position: absolute;
-  width: 100vw;
-  z-index: 0;
+  width: 100%;
+  min-height: 100vh;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.grid {
+  position: absolute;
+  align-items: center;
+  transform: translate(0, 50%);
+  width: 100%;
+  height: 50%;
+  z-index: 2;
+}
+
+.purple {
+  position: absolute;
+  max-height: 400px;
+  right: 10vw;
+  bottom: 5vh;
+  mix-blend-mode: color-dodge;
+  z-index: 2;
+}
+
+.orange {
+  position: absolute;
+  max-height: 400px;
+  left: 10vw;
+  top: 5vh;
+  mix-blend-mode: color-dodge;
+  z-index: 2;
 }
 
 body #orange {
   background-color: none;
   background-position: top 20% left 30%;
-  background-size: 840px auto;                   
+  background-size: 840px auto;
   background-repeat: no-repeat;
   background-blend-mode: color-dodge;
   z-index: 0;
@@ -101,14 +139,15 @@ body #orange {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  z-index: 4;
 }
 
 .countdown .countdown__title {
   text-transform: uppercase;
   font-family: 'HK Grotesk Wide';
   font-size: 3.5rem;
+  letter-spacing: 0.12em;
   height: 86.4px;
-  font-kerning: 100%; /* fix kerning */
   background: var(--horizon-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -121,6 +160,7 @@ body #orange {
 .countdown .countdown__timer .countdown__timer__minutes,
 .countdown .countdown__timer .countdown__timer__seconds {
   vertical-align: top;
+  text-transform: uppercase;
   margin: 23px 10px 0 10px;
   color: var(--pluto-white);
   display: inline-block;
@@ -132,7 +172,7 @@ body #orange {
   font-kerning: 3%;
 }
 
-.countdown .countdown__timer h3{
+.countdown .countdown__timer h3 {
   font-family: 'Space Mono';
   font-size: 14px;
   line-height: 150%;
