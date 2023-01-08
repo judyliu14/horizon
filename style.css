@@ -14,12 +14,14 @@
   --pluto-white: #FFFFFF;
   --cosmic-purple: #4F0D72;
   --horizon-gradient: linear-gradient(90deg, #FF6700 0%, #DC23A8 37%, #DC23A8 69%, #4F0D72 100%);
+  --horizon-height: 86.4px;
   --desktop-padding: 40px;
   --desktop-icon-size: 30px;
   --mobile-padding: 30px;
   --mobile-icon-size: 24px;
   --horizon-font-size: 3.5rem;
   --time-font-size: 3rem;
+  --dhms-font-size: 1rem;
   --margin-timer-size: 23px 10px 0 10px;
 }
 
@@ -36,7 +38,9 @@
     --mobile-padding: 20px;
     --mobile-icon-size: 20px;
     --horizon-font-size: 2rem;
+    --horizon-height: 55px;
     --time-font-size: 1.7rem;
+    --dhms-font-size: 0.5rem;
     --margin-timer-size: 10px 2px 0 2px;
   }
 }
@@ -72,7 +76,7 @@ body {
   width: 100%;
   min-height: 100vh;
   opacity: 0.4;
-  z-index: 1;
+  z-index: -1;
 }
 
 .grid {
@@ -81,7 +85,6 @@ body {
   transform: translate(0, 50%);
   width: 100%;
   height: 50%;
-  z-index: 2;
 }
 
 .purple {
@@ -90,7 +93,6 @@ body {
   right: 10vw;
   bottom: 5vh;
   mix-blend-mode: color-dodge;
-  z-index: 10;
   opacity: 0.2;
 }
 
@@ -100,7 +102,6 @@ body {
   left: 10vw;
   top: -25vh;
   mix-blend-mode: color-dodge;
-  z-index: 10;
   opacity: 0.3;
 }
 
@@ -110,7 +111,6 @@ body #orange {
   background-size: 840px auto;
   background-repeat: no-repeat;
   background-blend-mode: color-dodge;
-  z-index: 0;
 }
 
 /******************************** HEADER *************************************/
@@ -130,10 +130,11 @@ body #orange {
   float: left;
   padding-top: var(--desktop-padding);
   padding-left: var(--desktop-padding);
+  background-attachment: #ffffff;
 }
 
 .header .horizon img {
-  height: 56px;
+  height: var(--desktop-padding);
 }
 
 /******************************** MAIN *************************************/
@@ -153,7 +154,7 @@ body #orange {
   font-family: 'HK Grotesk Wide';
   font-size: var(--horizon-font-size);
   letter-spacing: 0.12em;
-  height: 86.4px;
+  height: var(--horizon-height);
   background: var(--horizon-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -180,7 +181,7 @@ body #orange {
 
 .countdown .countdown__timer h3 {
   font-family: 'Space Mono';
-  font-size: 14px;
+  font-size: var(--dhms-font-size);
   line-height: 150%;
   font-kerning: 0%;
 }
